@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="title" content="NetherGate Server" />
+    <meta name="description" content="NetherGate Minecraft server overview, status, and how to join." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#b3261e" />
+    <title>NetherGate Server</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../A.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../A.png" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="../index.html" class="brand">
+        <span class="brand-text" id="server-brand">NetherGate</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
+      <nav id="nav"></nav>
+    </header>
+
+    <main>
+      <section
+        class="bb-section hero-bg server-hero nether-flow"
+        style="--bg-url:url('../images/netherrack.png')"
+      >
+        <div class="bb-inner hero-inner reveal">
+          <img class="server-logo" id="server-logo" src="../A.png" alt="NetherGate" />
+          <h1 class="bb-title" id="server-hero-title">NetherGate Server</h1>
+          <p class="bb-subtitle" id="server-hero-sub">Dark fantasy realms, community-driven events, and always-on adventures.</p>
+          <div class="server-kpis">
+            <div class="server-kpi">
+              <span id="kpi-status-label">Live Status</span>
+              <span class="server-status" id="status-text"><span class="status-dot" id="status-dot"></span>Loading</span>
+            </div>
+            <div class="server-kpi">
+              <span id="kpi-players-label">Players Online</span>
+              <span class="server-code" id="players-online">000 / 000</span>
+            </div>
+            <div class="server-kpi">
+              <span id="kpi-version-label">Version</span>
+              <span class="server-code" id="server-version">v0.0.0</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="creative-separator" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+
+      <section class="section" id="status">
+        <div class="container">
+          <div class="projects-header reveal">
+            <div>
+              <p class="section-label" id="status-label">STATUS</p>
+              <h2 class="section-heading" id="status-heading">Live Server Status</h2>
+            </div>
+            <p class="section-mini-note" id="status-mini">LIVE METRICS</p>
+          </div>
+          <div class="server-grid" id="status-cards"></div>
+        </div>
+      </section>
+
+      <div class="creative-separator" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+
+      <section class="section section-alt" id="join">
+        <div class="container">
+          <div class="projects-header reveal">
+            <div>
+              <p class="section-label" id="join-label">JOIN</p>
+              <h2 class="section-heading" id="join-heading">IP & Port Viewer</h2>
+            </div>
+            <p class="section-mini-note" id="join-mini">CONNECTION DETAILS</p>
+          </div>
+          <div class="server-grid" id="join-cards"></div>
+        </div>
+      </section>
+
+      <div class="creative-separator" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section-center reveal">
+            <p class="section-label" id="about-label">ABOUT</p>
+            <h2 class="section-heading" id="about-heading">What is NetherGate?</h2>
+          </div>
+          <div class="server-grid" id="about-grid"></div>
+        </div>
+      </section>
+
+      <div class="creative-separator" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+
+      <section class="section section-alt" id="features">
+        <div class="container">
+          <div class="section-center reveal">
+            <p class="section-label" id="features-label">FEATURES</p>
+            <h2 class="section-heading" id="features-heading">What We Have</h2>
+          </div>
+          <div class="feature-grid server-features" id="features-grid"></div>
+        </div>
+      </section>
+
+      <div class="creative-separator" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+
+      <section class="section" id="reviews">
+        <div class="container">
+          <div class="section-center reveal">
+            <p class="section-label" id="reviews-label">REVIEWS</p>
+            <h2 class="section-heading" id="reviews-heading">What Players Say</h2>
+          </div>
+          <div class="review-grid" id="reviews-grid"></div>
+        </div>
+      </section>
+
+      <div class="creative-separator" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+
+      <section class="section section-alt" id="team">
+        <div class="container">
+          <div class="section-center reveal">
+            <p class="section-label" id="team-label">TEAM</p>
+            <h2 class="section-heading" id="team-heading">The Crew Behind the Gate</h2>
+          </div>
+          <div class="team-grid" id="team-grid"></div>
+        </div>
+      </section>
+
+      <div class="creative-separator" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+
+      <section class="section" id="rules">
+        <div class="container">
+          <div class="section-center reveal">
+            <p class="section-label" id="rules-label">RULES</p>
+            <h2 class="section-heading" id="rules-heading">Server Rules & Terms</h2>
+          </div>
+          <div class="rules-grid" id="rules-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span class="footer-copy" id="server-footer-text">© 2026 NetherGate — Server Network Overview</span>
+      <div class="footer-links" id="server-footer-links"></div>
+    </footer>
+
+    <script src="../config.js"></script>
+    <script>
+      const serverConfig = typeof CONFIG !== "undefined" && CONFIG.serverPage ? CONFIG.serverPage : {};
+      const STATUS_ENDPOINT = serverConfig.statusEndpoint || "https://api.mcstatus.io/v2/status/bedrock/play.crabsmp.net";
+      const navToggle = document.getElementById("nav-toggle");
+      const navEl = document.getElementById("nav");
+      if (navToggle && navEl) {
+        navToggle.addEventListener("click", () => navEl.classList.toggle("open"));
+      }
+
+      function wireNavLinks() {
+        document.querySelectorAll("#nav a").forEach((a) => {
+          a.addEventListener("click", () => {
+            if (navEl) navEl.classList.remove("open");
+          });
+        });
+      }
+
+      setTimeout(() => {
+        document.querySelectorAll(".reveal").forEach((el, i) => {
+          setTimeout(() => el.classList.add("in"), i * 40);
+        });
+      }, 80);
+
+      function setText(id, value) {
+        const el = document.getElementById(id);
+        if (el) el.textContent = value;
+      }
+
+      function setAttr(id, attr, value) {
+        const el = document.getElementById(id);
+        if (el && value) el.setAttribute(attr, value);
+      }
+
+      function resolveAssetPath(path) {
+        if (!path) return "";
+        if (/^(https?:|data:)/i.test(path)) return path;
+        return `../${path.replace(/^\.\//, "")}`;
+      }
+
+      function renderNav(items) {
+        if (!navEl) return;
+        navEl.innerHTML = "";
+        (items || []).forEach((item) => {
+          if (!item || !item.label || !item.href) return;
+          const link = document.createElement("a");
+          link.textContent = item.label;
+          link.href = item.href;
+          if (item.cta) link.classList.add("cta");
+          navEl.appendChild(link);
+        });
+        wireNavLinks();
+      }
+
+      function renderStatusCards(cards) {
+        const container = document.getElementById("status-cards");
+        if (!container) return;
+        container.innerHTML = "";
+        (cards || []).forEach((card) => {
+          const fields = (card.fields || [])
+            .map((field) => {
+              const idAttr = field.id ? ` id="${field.id}"` : "";
+              const value = field.value || "";
+              return `<div class="server-field"><span>${field.label || ""}</span><span class="server-code"${idAttr}>${value}</span></div>`;
+            })
+            .join("");
+          const noteId = card.noteId ? ` id="${card.noteId}"` : "";
+          const note = card.note ? `<p class="server-note"${noteId}>${card.note}</p>` : "";
+          const el = document.createElement("div");
+          el.className = "server-card reveal";
+          el.innerHTML = `<h3>${card.title || ""}</h3>${fields}${note}`;
+          container.appendChild(el);
+        });
+      }
+
+      function renderJoinCards(cards) {
+        const container = document.getElementById("join-cards");
+        if (!container) return;
+        container.innerHTML = "";
+        (cards || []).forEach((card) => {
+          const fields = (card.fields || [])
+            .map((field) => {
+              const idAttr = field.id ? ` id="${field.id}"` : "";
+              const value = field.value || "";
+              return `<div class="server-field"><span>${field.label || ""}</span><span class="server-code"${idAttr}>${value}</span></div>`;
+            })
+            .join("");
+          const note = card.note ? `<p class="server-note">${card.note}</p>` : "";
+          const button = card.button && card.button.label
+            ? `<a class="bb-btn dark" href="${card.button.href || "#"}"><span>${card.button.label}</span></a>`
+            : "";
+          const el = document.createElement("div");
+          el.className = "server-card reveal";
+          el.innerHTML = `<h3>${card.title || ""}</h3>${fields}${note}${button}`;
+          container.appendChild(el);
+        });
+      }
+
+      function renderCards(containerId, items, type) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        container.innerHTML = "";
+        (items || []).forEach((item) => {
+          const el = document.createElement("div");
+          if (type === "review") {
+            const rating = Math.max(1, Math.min(5, Number(item.rating || item.stars || 5)));
+            const stars = "★★★★★".slice(0, rating);
+            el.className = "review-card reveal";
+            el.innerHTML = `
+              <div class="review-header">
+                <span>${item.name || "Player"}</span>
+                <span class="review-stars">${stars}</span>
+              </div>
+              <p class="server-note">"${item.text || ""}"</p>
+            `;
+          } else if (type === "team") {
+            el.className = "team-card reveal";
+            el.innerHTML = `
+              <span class="team-badge">${item.role || "Role"}</span>
+              <h3>${item.name || "Name"}</h3>
+              <p class="server-note">${item.text || ""}</p>
+            `;
+          } else if (type === "rule") {
+            el.className = "rule-item reveal";
+            el.innerHTML = `
+              <div class="rule-title">${item.title || "Rule"}</div>
+              <div class="server-note">${item.text || ""}</div>
+            `;
+          } else {
+            el.className = "server-card reveal";
+            el.innerHTML = `
+              <h3>${item.title || ""}</h3>
+              <p class="server-note">${item.text || ""}</p>
+            `;
+          }
+          container.appendChild(el);
+        });
+      }
+
+      function renderFooter(footerCfg) {
+        const footerText = document.getElementById("server-footer-text");
+        const footerLinks = document.getElementById("server-footer-links");
+        if (footerText && footerCfg && footerCfg.copy) footerText.textContent = footerCfg.copy;
+        if (!footerLinks) return;
+        footerLinks.innerHTML = "";
+        (footerCfg && footerCfg.links ? footerCfg.links : []).forEach((link) => {
+          if (!link || !link.label || !link.href) return;
+          const a = document.createElement("a");
+          a.textContent = link.label;
+          a.href = link.href;
+          footerLinks.appendChild(a);
+        });
+      }
+
+      function applyServerConfig(cfg) {
+        if (!cfg) return;
+        const brandText = cfg.brandText || (window.CONFIG && window.CONFIG.brandText) || "NetherGate";
+        setText("server-brand", brandText);
+
+        renderNav(cfg.navLinks || []);
+
+        if (cfg.hero) {
+          setText("server-hero-title", cfg.hero.title || "");
+          setText("server-hero-sub", cfg.hero.subtitle || "");
+          if (cfg.hero.logo) setAttr("server-logo", "src", resolveAssetPath(cfg.hero.logo));
+          if (cfg.hero.background) {
+            const heroSection = document.querySelector(".server-hero");
+            if (heroSection) heroSection.style.setProperty("--bg-url", `url('${resolveAssetPath(cfg.hero.background)}')`);
+          }
+          if (cfg.hero.kpiLabels) {
+            setText("kpi-status-label", cfg.hero.kpiLabels.status || "Live Status");
+            setText("kpi-players-label", cfg.hero.kpiLabels.players || "Players Online");
+            setText("kpi-version-label", cfg.hero.kpiLabels.version || "Version");
+          }
+        }
+
+        if (cfg.status) {
+          setText("status-label", cfg.status.label || "STATUS");
+          setText("status-heading", cfg.status.heading || "Live Server Status");
+          setText("status-mini", cfg.status.note || "LIVE METRICS");
+          renderStatusCards(cfg.status.cards || []);
+        }
+
+        if (cfg.join) {
+          setText("join-label", cfg.join.label || "JOIN");
+          setText("join-heading", cfg.join.heading || "IP & Port Viewer");
+          setText("join-mini", cfg.join.note || "CONNECTION DETAILS");
+          renderJoinCards(cfg.join.cards || []);
+        }
+
+        if (cfg.about) {
+          setText("about-label", cfg.about.label || "ABOUT");
+          setText("about-heading", cfg.about.heading || "About");
+          renderCards("about-grid", cfg.about.cards || [], "basic");
+        }
+
+        if (cfg.features) {
+          setText("features-label", cfg.features.label || "FEATURES");
+          setText("features-heading", cfg.features.heading || "Features");
+          renderCards("features-grid", cfg.features.cards || [], "basic");
+        }
+
+        if (cfg.reviews) {
+          setText("reviews-label", cfg.reviews.label || "REVIEWS");
+          setText("reviews-heading", cfg.reviews.heading || "Reviews");
+          renderCards("reviews-grid", cfg.reviews.items || [], "review");
+        }
+
+        if (cfg.team) {
+          setText("team-label", cfg.team.label || "TEAM");
+          setText("team-heading", cfg.team.heading || "Team");
+          renderCards("team-grid", cfg.team.members || [], "team");
+        }
+
+        if (cfg.rules) {
+          setText("rules-label", cfg.rules.label || "RULES");
+          setText("rules-heading", cfg.rules.heading || "Rules");
+          renderCards("rules-grid", cfg.rules.items || [], "rule");
+        }
+
+        renderFooter(cfg.footer || {});
+      }
+
+      function refreshReveal() {
+        document.querySelectorAll(".reveal").forEach((el, i) => {
+          setTimeout(() => el.classList.add("in"), i * 40);
+        });
+      }
+
+      async function loadServerStatus() {
+        const statusDot = document.getElementById("status-dot");
+        const statusText = document.getElementById("status-text");
+        try {
+          const res = await fetch(STATUS_ENDPOINT, { cache: "no-store" });
+          if (!res.ok) throw new Error(`Status ${res.status}`);
+          const data = await res.json();
+          const online = Boolean(data && data.online);
+          if (statusText) statusText.lastChild.textContent = online ? "Online" : "Offline";
+          if (statusDot) statusDot.classList.toggle("offline", !online);
+          if (!online && statusText) statusText.classList.add("offline");
+
+          setText("players-online", `${data.players?.online ?? 0} / ${data.players?.max ?? 0}`);
+          setText("server-version", data.version?.name ? `v${data.version.name}` : "v0.0.0");
+          setText("status-ip", data.ip_address || "Unavailable");
+          setText("status-host", data.host || "Unavailable");
+          setText("status-online", String(data.players?.online ?? 0));
+          setText("status-max", String(data.players?.max ?? 0));
+          setText("status-gamemode", data.gamemode || "Unknown");
+          setText("status-edition", data.edition || "Unknown");
+          setText("status-motd", data.motd?.clean || "MOTD unavailable.");
+
+          setText("join-ip", data.host || "play.nethergate.gg");
+          setText("join-port", String(data.port || 19132));
+
+          const updated = data.retrieved_at ? new Date(data.retrieved_at).toLocaleString() : "";
+          setText("status-updated", updated ? `Updated ${updated}` : "Updated just now.");
+        } catch (err) {
+          if (statusText) statusText.lastChild.textContent = "Offline";
+          if (statusText) statusText.classList.add("offline");
+          if (statusDot) statusDot.classList.add("offline");
+          setText("status-updated", "Status unavailable right now.");
+        }
+      }
+
+      applyServerConfig(serverConfig);
+      refreshReveal();
+      loadServerStatus();
+    </script>
+  </body>
+</html>

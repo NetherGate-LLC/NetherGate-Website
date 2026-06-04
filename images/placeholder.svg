@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="placeholder image">
+  <defs>
+    <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#e6e9ef"/>
+      <stop offset="1" stop-color="#cfd6e3"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#g)"/>
+  <g transform="translate(80,120)" fill="#768099">
+    <rect x="40" y="40" width="640" height="360" rx="12" ry="12" fill="#fff" opacity="0.12"/>
+    <rect x="120" y="140" width="480" height="240" rx="6" ry="6" fill="#fff" opacity="0.06"/>
+  </g>
+  <g transform="translate(200,220)" fill="#6b7a90">
+    <circle cx="80" cy="-20" r="36" fill="#fff" opacity="0.06"/>
+    <rect x="0" y="0" width="400" height="180" rx="8" ry="8" fill="#6b7a90"/>
+    <rect x="16" y="18" width="72" height="54" rx="6" ry="6" fill="#cfd6e3"/>
+    <path d="M120 26 L170 26 L200 72 L260 72 L200 26 L170 26" fill="#cfd6e3" opacity="0.9"/>
+  </g>
+  <text x="50%" y="92%" font-family="Segoe UI, Roboto, Arial" font-size="20" fill="#59627a" text-anchor="middle">Image not available</text>
+</svg>

@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="title" content="NetherGate" />
+    <meta name="description" content="NetherGate is a Minecraft organization and server network forging dark fantasy worlds, tools, and community experiences." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Keywords" content="HTML, Python, CSS, SQL, JavaScript, How to, PHP, Java, C, C++, C#, jQuery, Bootstrap, Colors, W3.CSS, XML, MySQL, Icons, NodeJS, React, Graphics, Angular, R, AI, Git, Data Science, Code Game, Tutorials, Programming, Web Development, Training, Learning, Quiz, Exercises, Courses, Lessons, References, Examples, Learn to code, Source code, Demos, Tips, Website">
+    
+    <!-- Discord / Open Graph embed -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nethergate.gg/" />
+    <meta property="og:title" content="NetherGate" />
+    <meta property="og:description" content="NetherGate is a Minecraft organization and server network forging dark fantasy worlds, tools, and community experiences." />
+    <meta property="og:image" content="https://nethergate.gg/A.png" />
+
+    <!-- Controls the left-side colour bar in Discord -->
+    <meta name="theme-color" content="#b3261e" />
+    <title>NetherGate</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="A.png" />,
+    <link rel="apple-touch-icon" sizes="180x180" href="A.png" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="#hero" class="brand">
+        <span class="brand-text" id="logo-text">NetherGate</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
+      <nav id="nav">
+        <a href="#hero">Home</a>
+        <a href="#profile" id="nav-profile">About</a>
+        <a href="#selling">Network</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Studios</a>
+        <a href="#contact" class="cta">Join</a>
+      </nav>
+    </header>
+
+    <main>
+      <section
+        id="hero"
+        class="bb-section hero-bg nether-flow"
+        style="--bg-url:url('images/netherrack.png')"
+      >
+        <div class="bb-inner hero-inner reveal">
+          <h1 id="hero-title" class="bb-title">NetherGate</h1>
+          <p id="hero-sub" class="bb-subtitle"></p>
+          <div class="bb-actions" style="max-width: 760px">
+            <a class="bb-btn green" href="#projects"><span>View Projects</span></a>
+            <a class="bb-btn white" href="#selling" id="hero-store-cta"><span>Bedrock Server</span></a>
+          </div>
+        </div>
+      </section>
+
+      <div class="creative-separator" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+
+      <section class="section section-alt" id="selling">
+        <div class="container">
+          <div class="projects-header reveal">
+            <div>
+              <p class="section-label">NETWORK</p>
+              <h2 class="section-heading">NetherGate Network</h2>
+            </div>
+            <p class="section-mini-note">CLICK A CARD TO VIEW DETAILS</p>
+          </div>
+          <div class="cards-grid" id="selling-grid"></div>
+        </div>
+      </section>
+
+      <div class="creative-separator" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+
+      <section class="section" id="projects">
+        <div class="container">
+          <div class="projects-header reveal">
+            <div>
+              <p class="section-label">PROJECTS</p>
+              <h2 class="section-heading">What We're Building</h2>
+            </div>
+            <p class="section-mini-note">CLICK A CARD TO VIEW GALLERY</p>
+          </div>
+          <div class="cards-grid" id="cards-grid"></div>
+        </div>
+      </section>
+
+      <div class="creative-separator" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+
+      <section class="section section-alt" id="services">
+        <div class="container">
+          <div class="section-center reveal">
+            <p class="section-label">STUDIOS</p>
+            <h2 class="section-heading">What We Forge</h2>
+          </div>
+          <div class="services-grid reveal" id="services-grid"></div>
+        </div>
+      </section>
+
+      <div class="creative-separator" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+
+      <section class="section section-dark" id="contact">
+        <div class="container">
+          <div class="contact-inner reveal">
+            <h2 class="section-heading section-heading-center">Join the Gate</h2>
+            <div class="contact-links" id="contact-links"></div>
+            <div class="divider-row">or find us on Discord</div>
+            <div class="discord-box" id="discord-box">
+              <span class="discord-tag" id="discord-tag"></span>
+              <span class="discord-copy">Click to copy</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span class="footer-copy" id="footer-copy"></span>
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Join</a>
+        <a href="#" id="footer-gh">GitHub</a>
+      </div>
+    </footer>
+
+    <div id="gallery-modal" role="dialog" aria-modal="true" aria-label="Project gallery">
+      <div class="gm-backdrop" id="gm-backdrop"></div>
+      <div class="gm-shell">
+        <div class="gm-titlebar">
+          <div class="gm-title-left">
+            <div class="gm-accent-dot" id="gm-accent-dot"></div>
+            <span class="gm-project-name" id="gm-project-name"></span>
+          </div>
+          <button type="button" class="gm-close" id="gm-close" aria-label="Close gallery">✕</button>
+        </div>
+        <div class="gm-viewer" id="gm-viewer">
+          <button type="button" class="gm-nav prev" id="gm-prev" aria-label="Previous image">◀</button>
+          <img class="gm-main-img" id="gm-main-img" src="" alt="" style="display: none" />
+          <div class="gm-placeholder" id="gm-placeholder">
+            <div class="gm-placeholder-icon" id="gm-ph-icon">📷</div>
+            <div class="gm-placeholder-title">No screenshots yet</div>
+            <div class="gm-placeholder-sub">Add images to this project's gallery array in CONFIG.</div>
+          </div>
+          <button type="button" class="gm-nav next" id="gm-next" aria-label="Next image">▶</button>
+        </div>
+        <div class="gm-caption" id="gm-caption-bar" style="display: none">
+          <span class="gm-caption-text" id="gm-caption"></span>
+          <span class="gm-counter" id="gm-counter"></span>
+        </div>
+        <div class="gm-info">
+          <p class="gm-info-desc" id="gm-info-desc"></p>
+          <div class="gm-info-links" id="gm-info-links"></div>
+        </div>
+        <div class="gm-tags" id="gm-tags"></div>
+        <div class="gm-thumbs" id="gm-thumbs" style="display: none"></div>
+        <div class="gm-add-hint">ESC to close · ← → to navigate</div>
+      </div>
+    </div>
+
+    <div id="selling-modal" role="dialog" aria-modal="true" aria-label="Selling item">
+      <div class="gm-backdrop" id="sm-backdrop"></div>
+      <div class="gm-shell">
+        <div class="gm-titlebar">
+          <div class="gm-title-left">
+            <div class="gm-accent-dot" id="sm-accent-dot"></div>
+            <span class="gm-project-name" id="sm-title"></span>
+          </div>
+          <button type="button" class="gm-close" id="sm-close" aria-label="Close selling">✕</button>
+        </div>
+        <div class="gm-viewer" id="sm-viewer">
+          <button type="button" class="gm-nav prev" id="sm-prev" aria-label="Previous image">◀</button>
+          <img class="gm-main-img" id="sm-main-img" src="" alt="" style="display: none" />
+          <div class="gm-placeholder" id="sm-placeholder">
+            <div class="gm-placeholder-icon" id="sm-ph-icon">📦</div>
+            <div class="gm-placeholder-title">No images</div>
+          </div>
+          <button type="button" class="gm-nav next" id="sm-next" aria-label="Next image">▶</button>
+        </div>
+        <div class="gm-caption" id="sm-caption-bar" style="display: none">
+          <span class="gm-caption-text" id="sm-caption"></span>
+          <span class="gm-counter" id="sm-counter"></span>
+        </div>
+        <div class="sm-font-row">
+          <div class="sm-font-toggle" role="group" aria-label="Description font">
+            <button type="button" class="sm-font-btn" id="sm-font-default" aria-pressed="true">Default</button>
+            <button type="button" class="sm-font-btn" id="sm-font-minecraft" aria-pressed="false">Minecraft</button>
+          </div>
+        </div>
+        <div class="gm-info">
+          <div class="sm-desc-slot"><div id="sm-desc" class="gm-info-desc"></div></div>
+          <div class="gm-info-links" id="sm-links"></div>
+        </div>
+        <div class="gm-thumbs" id="sm-thumbs" style="display: none"></div>
+        <div class="gm-add-hint">Markdown rendering enabled · Full formatting supported</div>
+      </div>
+    </div>
+
+    <div id="profile-modal" role="dialog" aria-modal="true" aria-label="Profile menu">
+      <div class="gm-backdrop" id="pm-backdrop"></div>
+      <div class="gm-shell pm-shell">
+        <div class="gm-titlebar">
+          <div class="gm-title-left">
+            <div class="gm-accent-dot" id="pm-accent-dot"></div>
+            <span class="gm-project-name" id="pm-title">Profile</span>
+          </div>
+          <button type="button" class="gm-close" id="pm-close" aria-label="Close profile">✕</button>
+        </div>
+        <div class="pm-font-row">
+          <div class="pm-font-toggle" role="group" aria-label="Profile font">
+            <button type="button" class="pm-font-btn" id="pm-font-default" aria-pressed="true">Default</button>
+            <button type="button" class="pm-font-btn" id="pm-font-minecraft" aria-pressed="false">Minecraft</button>
+          </div>
+        </div>
+        <div class="pm-body">
+          <div class="pm-desc-wrap">
+            <div id="pm-desc" class="pm-desc"></div>
+          </div>
+          <div class="pm-links" id="pm-links"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="index.js" defer></script>
+  </body>
+</html>
