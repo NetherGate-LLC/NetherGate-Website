@@ -95,8 +95,8 @@ const CONFIG = {
     },
     {
       icon: "🧱",
-      title: "Python NetherNet",
-      desc: "A port of PrismarineJS's Bedrock Protocol to the Python programming language, enabling Python developers to build Bedrock protocol tools straight from Python.",
+      title: "Bedrock NetherNet",
+      desc: "Python bindings for bedrock-crustaceans/nethernet - Minecraft Bedrock WebRTC transport",
       tags: ["Tools", "Free Resource", "Backend"],
       status: "active",
       color: "#7B3B2E",
