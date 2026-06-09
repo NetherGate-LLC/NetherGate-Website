@@ -29,6 +29,12 @@ const CONFIG = {
     tagLine: "Not affiliated with Mojang Studios. Minecraft is a trademark of Mojang Studios.",
   },
 
+  // Defaults
+  defaults: {
+    // default color for link buttons when an unknown color is provided
+    linkColor: "white",
+  },
+
   // ---------------------------------------------------------------------------
   // Stats (displayed in hero/stats area if enabled by layout)
   // ---------------------------------------------------------------------------
@@ -64,7 +70,7 @@ const CONFIG = {
   // Optional fields:
   // - icon (emoji), tags (string[]), status ("active" | "wip" | "archived")
   // - slug (custom URL slug, example: "CrabSMP-Engine")
-  // - color (hex), cover (image path), links ([{label,url}]), gallery ([{url,caption}])
+  // - color (hex), cover (image path), links ([{label,url,color}]), gallery ([{url,caption}])
   //
   // Example project template:
   // {
@@ -75,7 +81,7 @@ const CONFIG = {
   //   status: "active",
   //   color: "#42A5F5",
   //   cover: "images/project-cover.png",
-  //   links: [{ label: "GitHub", url: "https://github.com/user/repo" }],
+  //   links: [{ label: "GitHub", url: "https://github.com/user/repo", color: "blue" }],
   //   gallery: [
   //     { url: "images/project-1.png", caption: "Dashboard" },
   //     { url: "images/project-2.png", caption: "Settings" },
@@ -83,47 +89,92 @@ const CONFIG = {
   // }
   projects: [
     {
-      icon: "🔥",
       title: "NetherGate Server",
       desc: "A fully custom built Minecraft Bedrock Network, featuring: KitPvP, Factions SMP, and Skyblock game modes with unique features, discord / web integration, and much more.",
       tags: ["PvP", "Network", "Bedrock"],
       status: "wip",
       color: "#E24A2B",
       cover: "images/cover-art/NetherGate.png",
-      links: [{ label: "View More", url: "https://nethergate.llc/minecraft" }],
+      links: [{ label: "View More", url: "https://nethergate.llc/minecraft", color: "blue" }],
       gallery: [],
     },
     {
-      icon: "🧱",
+      title: "Arkadia",
+      desc: "A Medieval Minecraft Bedrock Nations Server, focused on kingdom creation and player-interactions. Featuring land claiming and a fully custom built world with structures, a lore filled world, and more.",
+      tags: ["Whitelist-Only", "Survival", "Factions", "Medieval", "Nations"],
+      status: "active",
+      color: "#42A5F5",
+      cover: "images/cover-art/Arkadia.png",
+      links: [{ label: "Join the Discord", url: "https://discord.gg/vGJUTEWjUM", color: "green" }],
+      gallery: [],
+    },
+    {
+      title: "ModAPI.xyz",
+      desc: "A website dedicated to listing Minecraft Bedrock mods, plugins, and tools.",
+      tags: ["Website", "Tools", "Community Resource"],
+      status: "wip",
+      color: "#7B3B2E",
+      cover: "images/cover-art/ModAPI.png",
+      links: [{ label: "View Website", url: "https://modapi.xyz", color: "blue" }],
+      gallery: [],
+    },
+    {
+      title: "Barpus",
+      desc: "NetherGate's third party administrative bot, monitoring over 8000 members across 5 servers.",
+      tags: ["Discord Bot", "Community Resource", "Moderation"],
+      status: "wip",
+      color: "#C4552D",
+      cover: "images/cover-art/Barpus.png",
+      gallery: [],
+    },
+    {
+      title: "MCBE.live",
+      desc: "A Minecraft website designed to get the latest MCBE news and updates. As well as listing every new game change-log.",
+      tags: ["Website", "Newsletters", "Community Resource"],
+      status: "active",
+      color: "#C4552D",
+      cover: "images/cover-art/MCBE-live.png",
+      links: [{ label: "View Website", url: "https://mcbe.live", color: "blue" }],
+      gallery: [],
+    },
+    {
+      title: "Build a Realm",
+      desc: "A Discord Server to help players learn how to build and design their own Minecraft Bedrock Realms and Servers, with commission requests, add-ons, and more.",
+      tags: ["Discord Server", "Community Resource", "Help & Support"],
+      status: "active",
+      color: "#E24A2B",
+      cover: "images/cover-art/BuildaRealm.png",
+      links: [{ label: "Join the Discord", url: "https://buildarealm.xyz", color: "green" }],
+      gallery: [],
+    },
+    {
       title: "Bedrock NetherNet",
       desc: "Python bindings for bedrock-crustaceans/nethernet - Minecraft Bedrock WebRTC transport",
       tags: ["Tools", "Free Resource", "Backend"],
       status: "active",
       color: "#7B3B2E",
       cover: "images/cover-art/Bedrock-NetherNet.png",
-      links: [{ label: "View Repository", url: "https://github.com/NetherGate-LLC/bedrock-nethernet" }],
+      links: [{ label: "View Repository", url: "https://github.com/NetherGate-LLC/bedrock-nethernet", color: "white" }],
       gallery: [],
     },
     {
-      icon: "🛡️",
       title: "NetherGate Utilities",
       desc: "A Minecraft Bedrock Realm / Server utilities add-on, featuring: in-game commands, player ranks, warps, homes, and custom more.",
       tags: ["Add-on", "Free", "Open-source"],
       status: "wip",
       color: "#C4552D",
       cover: "images/cover-art/NetherGate-Utilities.png",
-      links: [{ label: "View Repository", url: "https://github.com/NetherGate-LLC/NetherGate-Utilities" }, { label: "Add-on Page", url: "https://nethergate.gg/nethergate-utilities" }],
+      links: [{ label: "View Repository", url: "https://github.com/NetherGate-LLC/NetherGate-Utilities", color: "white" }, { label: "Add-on Page", url: "https://nethergate.gg/addons/#/nethergate-utilities", color: "blue" }],
       gallery: [],
     },
     {
-      icon: "🧩",
       title: "AdemDEV's Portfolio",
-      desc: "AdemDEV's personal portfolio website, built with on a static site, featuring a Minecraft OreUI inspired design with fully configurable layouts, modules, and more. Fun Fact: This website is a fork of the original portfolio!",
+      desc: "AdemDEV's personal portfolio website, built with on a static site, featuring a Minecraft OreUI inspired design with fully configurable layouts, modules, and more.",
       tags: ["Open-source", "Free Resource", "Website"],
       status: "active",
       color: "#7B3B2E",
       cover: "images/cover-art/AdemDEV-Portfolio.png",
-      links: [{ label: "View Repository", url: "https://github.com/AdemDEV/AdemDEV-Portfolio" }, { label: "View Live Site", url: "https://ademdev.xyz" }],
+      links: [{ label: "View Repository", url: "https://github.com/AdemDEV/AdemDEV-Portfolio", color: "white" }, { label: "View Live Site", url: "https://ademdev.xyz", color: "blue" }],
       gallery: [],
     }
   ],
@@ -214,9 +265,9 @@ const CONFIG = {
     markdownUrl: "markdown/nethergate.md",
     accentColor: "#ff6a3d",
     buttons: [
-      { label: "Discord", url: "https://discord.gg/nethergate" },
-      { label: "Bedrock Server", url: "https://nethergate.llc/minecraft" },
-      { label: "Roadmap", url: "https://nethergate.llc/roadmap" },
+      { label: "Discord", url: "https://discord.gg/nethergate", color: "green" },
+      { label: "Bedrock Server", url: "https://nethergate.llc/minecraft", color: "blue" },
+      { label: "Roadmap", url: "https://nethergate.llc/roadmap", color: "gold" },
     ],
   },
   // ---------------------------------------------------------------------------
