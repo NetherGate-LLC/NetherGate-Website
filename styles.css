@@ -378,11 +378,11 @@ li {
 }
 
 .bb-btn.green > span {
-  border-image-source: url("ui/buttons/red/unchecked.png");
+  border-image-source: url("ui/buttons/green/unchecked.png");
 }
 
 .bb-btn.green:hover > span {
-  border-image-source: url("ui/buttons/red/unchecked_hover.png");
+  border-image-source: url("ui/buttons/green/unchecked_hover.png");
 }
 
 .bb-btn.white > span {
@@ -396,11 +396,11 @@ li {
 }
 
 .bb-btn.blue > span {
-  border-image-source: url("ui/buttons/dark/unchecked.png");
+  border-image-source: url("ui/buttons/blue/unchecked.png");
 }
 
 .bb-btn.blue:hover > span {
-  border-image-source: url("ui/buttons/dark/unchecked_hover.png");
+  border-image-source: url("ui/buttons/blue/unchecked_hover.png");
 }
 
 .bb-btn.gold > span {
@@ -680,12 +680,12 @@ li {
 
 .card-cover {
   width: 100%;
-  height: 116px;
+  height: 135px;
   margin-bottom: 12px;
   background-size: cover;
   background-position: center;
   border: 2px solid #4a2b2b;
-  border-radius: 12px;
+  border-radius: 6px;
   overflow: hidden;
   image-rendering: pixelated;
 }
@@ -756,6 +756,12 @@ li {
   color: #ff8b5a;
 }
 
+.card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .card-desc {
   font-family: "Mojangles", monospace;
   font-size: 1.06rem;
@@ -822,6 +828,18 @@ li {
 .card-btn:hover {
   border-image-source: url("ui/buttons/dark/unchecked_hover.png");
 }
+
+/* Support color variants on card buttons via classes (example: <a class="card-btn blue">) */
+.card-btn.green { border-image-source: url("ui/buttons/green/unchecked.png"); }
+.card-btn.green:hover { border-image-source: url("ui/buttons/green/unchecked_hover.png"); }
+.card-btn.white { color: var(--ash); border-image-source: url("ui/buttons/dark/unchecked.png"); }
+.card-btn.white:hover { border-image-source: url("ui/buttons/dark/unchecked_hover.png"); }
+.card-btn.blue { border-image-source: url("ui/buttons/blue/unchecked.png"); }
+.card-btn.blue:hover { border-image-source: url("ui/buttons/blue/unchecked_hover.png"); }
+.card-btn.gold { color: var(--ash); border-image-source: url("ui/buttons/dark/unchecked.png"); }
+.card-btn.gold:hover { border-image-source: url("ui/buttons/dark/unchecked_hover.png"); }
+.card-btn.dark { color: var(--ash); border-image-source: url("ui/buttons/dark/unchecked.png"); }
+.card-btn.dark:hover { border-image-source: url("ui/buttons/dark/unchecked_hover.png"); }
 
 .card-gallery-hint {
   margin-top: 10px;

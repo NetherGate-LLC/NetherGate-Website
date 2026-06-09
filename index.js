@@ -1,3 +1,10 @@
+const ALLOWED_LINK_COLORS = new Set(["green", "white", "blue", "gold", "dark"]);
+const DEFAULT_LINK_COLOR = (typeof CONFIG !== 'undefined' && CONFIG.defaults && CONFIG.defaults.linkColor) || "white";
+function resolveLinkColor(c) {
+  if (!c) return DEFAULT_LINK_COLOR;
+  return ALLOWED_LINK_COLORS.has(c) ? c : DEFAULT_LINK_COLOR;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const byId = (id) => document.getElementById(id);
   const uiSfx = createUISoundSystem();
@@ -13,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const heroTitle = byId("hero-title");
   if (heroTitle) heroTitle.textContent = CONFIG.name;
+
 
   const heroSub = byId("hero-sub");
   if (heroSub) heroSub.textContent = CONFIG.subtitle;
@@ -522,10 +530,11 @@ function renderCards(items, type) {
       .map((t) => `<span class="tag">${t}</span>`)
       .join("");
     const links = (p.links || [])
-      .map(
-        (l) =>
-          `<a class="card-btn" href="${l.url}" target="_blank" onclick="event.stopPropagation()">${l.label}</a>`,
-      )
+      .map((l) => {
+        const color = resolveLinkColor(l.color);
+        const colorClass = ` ${color}`;
+        return `<a class="card-btn${colorClass}" href="${l.url}" target="_blank" onclick="event.stopPropagation()">${l.label}</a>`;
+      })
       .join("");
     const imgCount = (p.gallery || p.images || []).length;
     const hintText =
@@ -544,7 +553,7 @@ function renderCards(items, type) {
     const hasCover = !!coverSrc;
     const coverHtml = hasCover
       ? `<div class="card-cover" style="background-image:url('${coverSrc}')"></div>`
-      : `<div class="card-cover is-placeholder"><span class="card-cover-icon">${p.icon || "📦"}</span></div>`;
+      : `<div class="card-cover is-placeholder"></div>`;
 
     const el = document.createElement("div");
     el.className = "card reveal";
@@ -556,11 +565,10 @@ function renderCards(items, type) {
         <div class="card-chip-row">
           <span class="card-chip">${cardLabel}</span>
         </div>
-        <div class="card-icon-row">
-          <span class="card-emoji">${p.icon || "📦"}</span>
+        <div class="card-title-row">
+          <div class="card-title">${p.title}</div>
           ${p.status ? `<span class="status-pill ${p.status === "wip" ? "pill-wip" : p.status === "active" ? "pill-active" : "pill-archived"}">${p.status}</span>` : ""}
         </div>
-        <div class="card-title">${p.title}</div>
         <p class="card-desc">${type === "selling" ? (p.price ? `<strong>${p.price}</strong><span class="card-sep"> — </span>` : "") + (p.short || "") : p.desc || ""}</p>
         <div class="card-links${links ? "" : " is-empty"}">${links}</div>
         <div class="card-tags">${tags}</div>
@@ -611,15 +619,16 @@ function initProjectModal() {
       const a = document.createElement("a");
       a.href = l.url;
       a.target = "_blank";
-      a.className = "card-btn modal-btn";
+      const color = resolveLinkColor(l.color);
+      a.className = `card-btn modal-btn ${color}`;
       a.textContent = l.label;
       linksEl.appendChild(a);
     });
     document.getElementById("gm-tags").innerHTML = (currentProject.tags || [])
       .map((t) => `<span class="tag">${t}</span>`)
       .join("");
-    document.getElementById("gm-ph-icon").textContent =
-      currentProject.icon || "📷";
+    const gmPhIconEl = document.getElementById("gm-ph-icon");
+    if (gmPhIconEl) gmPhIconEl.textContent = "";
 
     const gallery = currentProject.gallery || [];
     if (gallery.length > 0) {
@@ -825,13 +834,14 @@ function initSellingModal() {
       const a = document.createElement("a");
       a.href = l.url;
       a.target = "_blank";
-      a.className = "card-btn modal-btn";
+      const color = resolveLinkColor(l.color);
+      a.className = `card-btn modal-btn ${color}`;
       a.textContent = l.label;
       linksEl.appendChild(a);
     });
 
-    document.getElementById("sm-ph-icon").textContent =
-      currentItem.icon || "📦";
+    const smPhIconEl = document.getElementById("sm-ph-icon");
+    if (smPhIconEl) smPhIconEl.textContent = "";
 
     const gallery = currentItem.images || [];
     if (gallery.length > 0) {
@@ -1139,7 +1149,8 @@ function initProfileMenu() {
       a.href = btn.url;
       a.target = "_blank";
       a.rel = "noopener noreferrer";
-      a.className = "card-btn modal-btn";
+      const color = resolveLinkColor(btn.color);
+      a.className = `card-btn modal-btn ${color}`;
       a.textContent = btn.label;
       linksEl.appendChild(a);
     });
